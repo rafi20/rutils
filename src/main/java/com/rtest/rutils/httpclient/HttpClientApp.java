@@ -14,8 +14,8 @@ public final class HttpClientApp {
     private static HttpClient client = HttpClient.newHttpClient();
     public static void main(String[] args) throws Exception {
         String url = "http://localhost:8080/nifi-api/flow/about";
-        String dev_url1 = "https://iacap063.dev.e2open.com:9003/nifi-api/flow/about";
-		String dev_url = "https://iacap063.dev.e2open.com:9003/nifi-api/system-diagnostics";
+        String dev_url1 = "https://devnode.dev.mycompany.com:9003/nifi-api/flow/about";
+		String dev_url = "https://devnode.dev.mycompany.com:9003/nifi-api/system-diagnostics";
         String postname_url = "https://postman-echo.com/get?foo1=bar1&foo2=bar2";
         httpGetRequest(dev_url);
     }
@@ -33,19 +33,19 @@ public final class HttpClientApp {
 /*
 #Client usage examples:
 # TLSv1.2
-java -Djdk.tls.client.protocols=TLSv1.2 -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/rdm-qa/conf/clientcerts/externalKeystore.jks -Djavax.net.ssl.keyStorePassword=e2RdmNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/rdm-qa/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2RdmNifi@P HttpClientApp
+java -Djdk.tls.client.protocols=TLSv1.2 -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/dev/conf/clientcerts/externalKeystore.jks -Djavax.net.ssl.keyStorePassword=e2myAppNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/dev/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2myAppNifi@P HttpClientApp
 
 # TLSv1.2, use p12 file instead of jks
-java -Djdk.tls.client.protocols=TLSv1.2 -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/rdm-qa/conf/clientcerts/cdmqa-rdmnifi-admin.p12 -Djavax.net.ssl.keyStorePassword=e2RdmNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/rdm-qa/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2RdmNifi@P HttpClientApp
+java -Djdk.tls.client.protocols=TLSv1.2 -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/dev/conf/clientcerts/cdmqa-myAppnifi-admin.p12 -Djavax.net.ssl.keyStorePassword=e2myAppNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/dev/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2myAppNifi@P HttpClientApp
 
 #TLSv1.3 (default)
-java -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/rdm-qa/conf/clientcerts/externalKeystore.jks -Djavax.net.ssl.keyStorePassword=e2RdmNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/rdm-qa/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2RdmNifi@P HttpClientApp
+java -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/dev/conf/clientcerts/externalKeystore.jks -Djavax.net.ssl.keyStorePassword=e2myAppNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/dev/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2myAppNifi@P HttpClientApp
 
 # TLSv1.3, use p12 file instead of jks
-java -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/rdm-qa/conf/clientcerts/nas_k8s_data/rdm-qa/conf/clientcertscert/cdmqa-rdmnifi-admin.p12 -Djavax.net.ssl.keyStorePassword=e2RdmNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/rdm-qa/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2RdmNifi@P HttpClientApp
+java -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/dev/conf/clientcerts/nas_k8s_data/dev/conf/clientcertscert/cdmqa-myAppnifi-admin.p12 -Djavax.net.ssl.keyStorePassword=e2myAppNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/dev/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2myAppNifi@P HttpClientApp
 
 #Error: without truststore with (ca.crt) client certificate wont be presented to server
-java -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/rdm-qa/conf/clientcerts/nas_k8s_data/rdm-qa/conf/clientcertscert/cdmqa-rdmnifi-admin.p12 -Djavax.net.ssl.keyStorePassword=e2RdmNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/rdm-qa/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2RdmNifi@P HttpClientApp
+java -Djavax.net.debug=all -Djavax.net.ssl.keyStore=/nas_k8s_data/dev/conf/clientcerts/nas_k8s_data/dev/conf/clientcertscert/cdmqa-myAppnifi-admin.p12 -Djavax.net.ssl.keyStorePassword=e2myAppNifi@P -Djavax.net.ssl.trustStore=/nas_k8s_data/dev/conf/clientcerts/externalTruststore.jks -Djavax.net.ssl.trustStorePassword=e2myAppNifi@P HttpClientApp
 
 
 */
