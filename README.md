@@ -1,5 +1,8 @@
 # rutils
 
+git commit -m "readme updated"
+git push -u origin master
+
 # to sync the changes on master to your working branch (when already some changes made to branch)
 git stash
 git pull --rebase origin master
@@ -10,12 +13,12 @@ git checkout <filename>
 git status
 git add fileName
 git add 
-git checkout -b rdm_20.3.1
-git checkout -b RDM-2402
-git commit -m "RDM-2402 added length >=, <= operators"
-git commit -m "RDM-2402 renamed length check operator"
-git push -u origin RDM-2547
-git push -u origin RDM-2402
+git checkout -b branch_name1
+git checkout -b branch_name1
+git commit -m "message 1"
+git commit -m "message 2"
+git push -u origin branch_name
+git push -u origin branch_name
 
 #delete remote branch
 git push origin --delete feature/login
